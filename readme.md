@@ -38,7 +38,8 @@
     - jpa 
     - h2 
     - validation
-    - modelmapper 
+    - model mapper 
+    - security
 
 <br>
 <br>
