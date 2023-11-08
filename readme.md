@@ -42,4 +42,21 @@
     - security
 
 <br>
+
+### catalog-service 
+- 실행 port = random  <br><br>  
+- spring boot 3.1.5  
+- java 17  
+- jdk 19 <br><br>  
+- dependency   
+    - Eureka Discovery Client  
+    - Spring Boot DevTools  
+    - Lombok  
+    - Spring Web  
+    - jpa 
+    - h2 
+    - validation
+    - model mapper 
+
+<br>
 <br>
