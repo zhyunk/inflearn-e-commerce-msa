@@ -45,6 +45,11 @@ project(':ecommerce') {
     jar {enabled = false}
 }
 
+project(':api-gateway-service') {
+    bootJar {enabled = true}
+    jar {enabled = false}
+}
+
 project(':user-service') {
     bootJar {enabled = true}
     jar {enabled = false}

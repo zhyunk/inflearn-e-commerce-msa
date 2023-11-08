@@ -1,11 +1,11 @@
 ### user service - health check
-GET localhost:62994/user-service/health_check
+GET localhost:8000/user-service/health_check
 
 ### user service - welcome
-GET localhost:62994/user-service/welcome
+GET localhost:8000/user-service/welcome
 
 ### user service - users
-POST localhost:51020/user-service/users
+POST localhost:8000/user-service/users
 Content-Type: application/json
 
 {
