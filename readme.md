@@ -3,18 +3,16 @@
 
 ## ✏️ 프로젝트 환경
 
-### 🔍 메인 프로젝트
-
-#### ecommerce (service discovery)
+### ecommerce (service discovery)
 - spring boot 3.1.5  
 - java 17  
 - jdk 19 <br><br>  
 - dependency   
     - Eureka Server  
 
+<br>
 
-
-#### user-service 
+### user-service 
 - spring boot 3.1.5  
 - java 17  
 - jdk 19 <br><br>  
@@ -26,6 +24,7 @@
     - jpa 
     - h2 
     - validation
+    - modelmapper 
 
 <br>
 <br>
