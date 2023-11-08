@@ -36,9 +36,7 @@ public class UserController {
     public ResponseEntity<ResponseUser> createUser(@RequestBody RequestUser user) {
 
         UserDto dto = mapper.map(user, UserDto.class);
-        UserDto saved = userService.createUser(dto);
-
-        ResponseUser responseUser = mapper.map(saved, ResponseUser.class);
+        ResponseUser responseUser = userService.createUser(dto);
 
         return ResponseEntity
                 .created(ServletUriComponentsBuilder

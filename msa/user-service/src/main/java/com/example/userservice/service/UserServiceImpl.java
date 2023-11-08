@@ -3,6 +3,7 @@ package com.example.userservice.service;
 import com.example.userservice.dto.UserDto;
 import com.example.userservice.entity.User;
 import com.example.userservice.repository.UserRepository;
+import com.example.userservice.vo.ResponseUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -18,15 +19,15 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public UserDto createUser(UserDto userDto) {
+    public ResponseUser createUser(UserDto userDto) {
         userDto.setUserId(UUID.randomUUID().toString());
 
         User user = mapper.map(userDto, User.class);
         user.setEncryptedPwd("encrypted_password");
 
-        userRepository.save(user);
+        User saved = userRepository.save(user);
 
-        return mapper.map(user, UserDto.class);
+        return mapper.map(saved, ResponseUser.class);
     }
 
 }
