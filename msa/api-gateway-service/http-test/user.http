@@ -14,3 +14,9 @@ Content-Type: application/json
   "pwd": "zhyun"
 }
 
+### user service - users 전체 조회
+GET localhost:8000/user-service/users
+
+### user service - users 단건 조회
+GET localhost:8000/user-service/users/22da7089-2939-46cc-b821-2e27339109ca
+
