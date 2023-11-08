@@ -10,6 +10,7 @@ Content-Type: application/json
 
 {
   "email": "zhyun@kim.wlgus",
-  "name": "얼거스 김"
+  "name": "얼거스 김",
+  "pwd": "zhyun"
 }
 
