@@ -4,13 +4,19 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@Data
+
+@ToString(callSuper = true)
+@Getter @Setter
+@NoArgsConstructor
 @Entity(name = "`users`")
-public class User {
+public class User extends BaseEntity {
 
     @Id @GeneratedValue(strategy = IDENTITY)
     private Long id;
@@ -23,4 +29,5 @@ public class User {
     private String userId;
     @Column(nullable = false, unique = true)
     private String encryptedPwd;
+
 }
