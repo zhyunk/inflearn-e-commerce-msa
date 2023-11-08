@@ -3,13 +3,18 @@ package com.example.userservice.service;
 import com.example.userservice.dto.UserDto;
 import com.example.userservice.entity.User;
 import com.example.userservice.repository.UserRepository;
+import com.example.userservice.vo.ResponseOrder;
 import com.example.userservice.vo.ResponseUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Slf4j
@@ -30,6 +35,26 @@ public class UserServiceImpl implements UserService {
         User saved = userRepository.save(user);
 
         return mapper.map(saved, ResponseUser.class);
+    }
+
+    @Override
+    public ResponseUser getUserByUserId(String userId) {
+        Optional<User> user = userRepository.findByUserId(userId);
+
+        if (user.isEmpty())
+            throw new UsernameNotFoundException("User Not Found");
+
+        ResponseUser responseUser = mapper.map(user.get(), ResponseUser.class);
+
+        List<ResponseOrder> orders = new ArrayList<>();
+        responseUser.setOrders(orders);
+
+        return responseUser;
+    }
+
+    @Override
+    public Iterable<User> getUserByAll() {
+        return userRepository.findAll();
     }
 
 }

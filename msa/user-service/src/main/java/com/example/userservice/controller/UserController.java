@@ -12,6 +12,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/")
@@ -42,6 +45,23 @@ public class UserController {
                 .created(ServletUriComponentsBuilder
                         .fromCurrentRequest().build().toUri())
                 .body(responseUser);
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<ResponseUser>> getUsers() {
+        List<ResponseUser> result = new ArrayList<>();
+
+        userService
+                .getUserByAll()
+                .forEach(people -> result.add(mapper.map(people, ResponseUser.class)));
+
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/users/{id}")
+    public ResponseEntity<ResponseUser> getUser(@PathVariable String id) {
+
+        return ResponseEntity.ok(userService.getUserByUserId(id));
     }
 
 }
