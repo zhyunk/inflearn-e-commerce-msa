@@ -4,6 +4,7 @@
 ## ✏️ 프로젝트 환경
 
 ### ecommerce (service discovery)
+- 실행 port = 8761  <br><br>  
 - spring boot 3.1.5  
 - java 17  
 - jdk 19 <br><br>  
@@ -12,7 +13,20 @@
 
 <br>
 
+### api-gateway-service  ( gateway )
+- 실행 port = 8000 <br><br>  
+- spring boot 3.1.5  
+- java 17  
+- jdk 19 <br><br>  
+- dependency   
+    - Eureka Discovery Client  
+    - Lombok
+    - Gateway
+
+<br>
+
 ### user-service 
+- 실행 port = random  <br><br>  
 - spring boot 3.1.5  
 - java 17  
 - jdk 19 <br><br>  
