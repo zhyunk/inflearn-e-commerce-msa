@@ -4,3 +4,12 @@ GET localhost:62994/user-service/health_check
 ### user service - welcome
 GET localhost:62994/user-service/welcome
 
+### user service - users
+POST localhost:51020/user-service/users
+Content-Type: application/json
+
+{
+  "email": "zhyun@kim.wlgus",
+  "name": "얼거스 김"
+}
+
