@@ -1,0 +1,6 @@
+### user service - health check
+GET localhost:62994/user-service/health_check
+
+### user service - welcome
+GET localhost:62994/user-service/welcome
+
