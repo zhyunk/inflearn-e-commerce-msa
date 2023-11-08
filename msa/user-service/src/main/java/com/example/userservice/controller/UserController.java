@@ -12,8 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import static org.modelmapper.convention.MatchingStrategies.STRICT;
-
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/")
@@ -21,6 +19,7 @@ public class UserController {
     private final Environment env;
     private final Greeting greeting;
 
+    private final ModelMapper mapper;
     private final UserService userService;
 
     @GetMapping("/health_check")
@@ -35,8 +34,6 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity<ResponseUser> createUser(@RequestBody RequestUser user) {
-        ModelMapper mapper = new ModelMapper();
-        mapper.getConfiguration().setMatchingStrategy(STRICT);
 
         UserDto dto = mapper.map(user, UserDto.class);
         UserDto saved = userService.createUser(dto);
