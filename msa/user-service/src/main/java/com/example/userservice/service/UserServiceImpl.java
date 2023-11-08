@@ -7,6 +7,7 @@ import com.example.userservice.vo.ResponseUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -17,13 +18,14 @@ import java.util.UUID;
 public class UserServiceImpl implements UserService {
     private final ModelMapper mapper;
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public ResponseUser createUser(UserDto userDto) {
         userDto.setUserId(UUID.randomUUID().toString());
 
         User user = mapper.map(userDto, User.class);
-        user.setEncryptedPwd("encrypted_password");
+        user.setEncryptedPwd(passwordEncoder.encode(userDto.getPwd()));
 
         User saved = userRepository.save(user);
 

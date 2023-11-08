@@ -21,6 +21,7 @@ dependencies {
 
     implementation "org.modelmapper:modelmapper:${modelMapperVersion}"
 
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
