@@ -26,7 +26,7 @@ spring:
     defer-datasource-initialization: true
     database-platform: H2
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     open-in-view: false
     properties:
       hibernate:
