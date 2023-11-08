@@ -54,3 +54,8 @@ project(':user-service') {
     bootJar {enabled = true}
     jar {enabled = false}
 }
+
+project(':catalog-service') {
+    bootJar {enabled = true}
+    jar {enabled = false}
+}
