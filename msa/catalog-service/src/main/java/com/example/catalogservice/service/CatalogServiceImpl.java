@@ -8,7 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -18,9 +21,12 @@ public class CatalogServiceImpl implements CatalogService {
     private final CatalogRepository catalogRepository;
 
     @Override
-    public Iterable<Catalog> getAllCatalogs() {
+    public List<ResponseCatalog> getAllCatalogs() {
 
-        return catalogRepository.findAll();
+        return Stream.of(catalogRepository.findAll().iterator())
+                .filter(Iterator::hasNext)
+                .map(catalogIterator -> mapper.map(catalogIterator.next(), ResponseCatalog.class))
+                .toList();
     }
 
     @Override
