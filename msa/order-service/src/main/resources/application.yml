@@ -1,0 +1,46 @@
+server:
+  port: 0
+  servlet:
+    context-path: /order-service
+
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    url: jdbc:h2:${user.dir}/order-service/h2/testdb;AUTO_SERVER=TRUE;mode=MYSQL;
+    driverClassName: org.h2.Driver
+
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true # 외부 접속 허용
+      path: /h2-console
+
+#  sql:
+#    init:
+#      mode: always
+
+  jpa:
+#    defer-datasource-initialization: true
+    database-platform: H2
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+

@@ -59,3 +59,8 @@ project(':catalog-service') {
     bootJar {enabled = true}
     jar {enabled = false}
 }
+
+project(':order-service') {
+    bootJar {enabled = true}
+    jar {enabled = false}
+}
