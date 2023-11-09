@@ -1,7 +1,7 @@
 ### health check
 GET http://localhost:8000/order-service/health_check
 
-### create order
+### 회원의 신규 주문 생성
 POST http://localhost:8000/order-service/f79fa1c1-78c4-45c2-9ae5-efe8b4f6bb36/orders
 Content-Type: application/json
 
@@ -11,5 +11,5 @@ Content-Type: application/json
   "unitPrice": 1500
 }
 
-### show order
+### 회원의 주문 내역 조회
 GET http://localhost:8000/order-service/f79fa1c1-78c4-45c2-9ae5-efe8b4f6bb36/orders
