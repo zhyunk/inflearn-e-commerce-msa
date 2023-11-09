@@ -43,7 +43,7 @@
 
 <br>
 
-### catalog-service 
+### catalog-service , order-service 
 - 실행 port = random  <br><br>  
 - spring boot 3.1.5  
 - java 17  
