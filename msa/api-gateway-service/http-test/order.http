@@ -1,0 +1,15 @@
+### health check
+GET http://localhost:8000/order-service/health_check
+
+### create order
+POST http://localhost:8000/order-service/f79fa1c1-78c4-45c2-9ae5-efe8b4f6bb36/orders
+Content-Type: application/json
+
+{
+  "productId": "CATALOG_001",
+  "qty" : 10,
+  "unitPrice": 1500
+}
+
+### show order
+GET http://localhost:8000/order-service/f79fa1c1-78c4-45c2-9ae5-efe8b4f6bb36/orders
