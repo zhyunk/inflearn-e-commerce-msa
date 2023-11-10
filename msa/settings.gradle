@@ -4,4 +4,5 @@ include 'user-service'
 include 'api-gateway-service'
 include 'catalog-service'
 include 'order-service'
+include 'config-service'
 

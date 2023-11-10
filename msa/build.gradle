@@ -64,3 +64,8 @@ project(':order-service') {
     bootJar {enabled = true}
     jar {enabled = false}
 }
+
+project(':config-service') {
+    bootJar {enabled = true}
+    jar {enabled = false}
+}
