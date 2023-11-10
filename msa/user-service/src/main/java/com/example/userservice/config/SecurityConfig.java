@@ -43,6 +43,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(config -> config
                         .requestMatchers(toH2Console()).permitAll()
+                        .requestMatchers(mvc.pattern("/actuator/**")).permitAll()
                         .requestMatchers(mvc.pattern("/**")).access(this::ipCheck))
 
                 .addFilter(authenticationFilter());
