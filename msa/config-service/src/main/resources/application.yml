@@ -10,4 +10,4 @@ spring:
     config:
       server:
         git:
-          uri: file://C:\Users\xh\Documents\inflearn\inflearn-e-commerce-msa
+          uri: file://C:\Users\xh\Documents\inflearn\inflearn-e-commerce-msa-config
