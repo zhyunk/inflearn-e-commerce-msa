@@ -19,8 +19,9 @@
     - 8000 <br><br>  
 - dependency   
     - Eureka Discovery Client  
-    - Lombok
     - Gateway
+    - Lombok
+    - jjwt  
 
 <br>
 
@@ -29,14 +30,15 @@
     - random  <br><br>  
 - dependency   
     - Eureka Discovery Client  
+    - Spring Web  
     - Spring Boot DevTools  
     - Lombok  
-    - Spring Web  
     - jpa 
     - h2 
     - validation
     - model mapper 
     - security
+    - jjwt  
 
 <br>
 
@@ -45,9 +47,9 @@
     - random  <br><br>  
 - dependency   
     - Eureka Discovery Client  
+    - Spring Web  
     - Spring Boot DevTools  
     - Lombok  
-    - Spring Web  
     - jpa 
     - h2 
     - validation
