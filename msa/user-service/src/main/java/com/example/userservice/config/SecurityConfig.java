@@ -27,7 +27,7 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 public class SecurityConfig {
     private final AuthenticationConfiguration authenticationConfiguration;
 
-    private final IpAddressMatcher ALLOWED_IP_ADDRESS = new IpAddressMatcher("127.0.0.1");
+    private final IpAddressMatcher ALLOWED_IP_ADDRESS = new IpAddressMatcher("192.168.219.103");
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http,

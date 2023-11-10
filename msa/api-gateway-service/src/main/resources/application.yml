@@ -8,10 +8,6 @@ spring:
   cloud:
     gateway:
       routes:
-#        - id: user-service
-#          uri: lb://user-service
-#          predicates:
-#            - Path=/user-service/**
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -19,7 +15,7 @@ spring:
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}/
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 
         - id: user-service
           uri: lb://user-service
@@ -28,7 +24,7 @@ spring:
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}/
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 
         - id: user-service
           uri: lb://user-service
@@ -37,11 +33,13 @@ spring:
             - Method=GET
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}/
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+
         - id: catalog-service
           uri: lb://catalog-service
           predicates:
             - Path=/catalog-service/**
+
         - id: order-service
           uri: lb://order-service
           predicates:
@@ -51,7 +49,7 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${random.value}}
 
   client:
     register-with-eureka: true

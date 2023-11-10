@@ -1,23 +1,25 @@
 ###  health check
-#GET 127.0.0.1:8000/user-service/health_check
-GET 127.0.0.1:65217/health_check
+GET 192.168.219.103:8000/user-service/health_check
+#GET 192.168.219.103:53163/health_check
 
 ###  welcome 메세지 출력
-GET localhost:8000/user-service/welcome
+GET  192.168.219.103:8000/user-service/welcome
+#GET  192.168.219.103:53163/welcome
 
 ###  users 등록
-#POST 127.0.0.1:8000/user-service/users
-POST 127.0.0.1:65217/users
+POST 192.168.219.103:8000/users
+#POST 192.168.219.103:53163/users
 Content-Type: application/json
 
 {
-  "email": "zhyun@asd",
+  "email": "zhyun@asasdd",
   "name": "얼거스 김",
   "pwd": "zhyun"
 }
 
 ###  users 로그인
-POST 127.0.0.1:65217/login
+POST 192.168.219.103:8000/user-service/login
+#POST 192.168.219.103:53163/login
 Content-Type: application/json
 
 {
@@ -26,8 +28,10 @@ Content-Type: application/json
 }
 
 ###  users 전체 조회
-GET localhost:8000/user-service/users
+GET 192.168.219.103:8000/user-service/users
+#GET 192.168.219.103:53163/users
 
 ###  users 단건 조회
-GET localhost:8000/user-service/users/22da7089-2939-46cc-b821-2e27339109ca
+GET 192.168.219.103:8000/user-service/users/22da7089-2939-46cc-b821-2e27339109ca
+#GET 192.168.219.103:53163/users/22da7089-2939-46cc-b821-2e27339109ca
 
