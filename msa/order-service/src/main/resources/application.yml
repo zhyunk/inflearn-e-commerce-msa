@@ -6,6 +6,10 @@ server:
 spring:
   application:
     name: order-service
+  profiles:
+    include:
+      - bootstrap
+      - actuator
 
   datasource:
     url: jdbc:h2:${user.dir}/order-service/h2/testdb;AUTO_SERVER=TRUE;mode=MYSQL;

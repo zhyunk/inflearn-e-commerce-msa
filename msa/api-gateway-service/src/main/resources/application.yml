@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: api-gateway-service
+  profiles:
+    include:
+      - bootstrap
 
   cloud:
     gateway:
@@ -72,5 +75,8 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
-token:
-  secret: user_token_qpwoeirutyzmxncbvlaksjdhfg_pkngrdxxxxxaqwazxcmnbvasdlkjsdfkjhdfgpoiqweoiuweriuyertkjhsdfiuyrewtjhgdcvboiuyasdmnbcvbxlkjzxoiuqewbvjh
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, info, httptrace
