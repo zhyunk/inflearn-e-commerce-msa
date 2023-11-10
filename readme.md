@@ -25,6 +25,14 @@
 
 <br>
 
+### config-service  ( config )
+- port 
+    - 8888 <br><br>  
+- dependency   
+    - config server
+
+<br>
+
 ### user-service 
 - port 
     - random  <br><br>  
