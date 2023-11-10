@@ -1,0 +1,6 @@
+token:
+  expiration_time: 86400000 # 1일
+  secret: user_token_qpwoeirutyzmxncbvlaksjdhfg_pkngrdxxxxxaqwazxcmnbvasdlkjsdfkjhdfgpoiqweoiuweriuyertkjhsdfiuyrewtjhgdcvboiuyasdmnbcvbxlkjzxoiuqewbvjh
+
+gateway:
+   ip: 192.168.219.103
