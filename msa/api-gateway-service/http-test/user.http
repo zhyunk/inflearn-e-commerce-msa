@@ -1,10 +1,12 @@
 ###  health check
 GET 192.168.219.103:8000/user-service/health_check
 #GET 192.168.219.103:53163/health_check
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNGQ0YzMyMi1mZjkxLTRjZWQtODQ3Yi00YTIxZjg4ODg2MTciLCJlbWFpbCI6InpoeXVuQGFzZCIsImV4cCI6MTY5OTY4NTUxMn0.wKL88zlKwG4BEq9NNg5p2cRlhklZb7z5DipRLN8FzPFNmyPsYumd_nB1JnAHJxb-_wMhudizlhs0SAjSj6Jc0g
 
 ###  welcome 메세지 출력
 GET  192.168.219.103:8000/user-service/welcome
 #GET  192.168.219.103:53163/welcome
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNGQ0YzMyMi1mZjkxLTRjZWQtODQ3Yi00YTIxZjg4ODg2MTciLCJlbWFpbCI6InpoeXVuQGFzZCIsImV4cCI6MTY5OTY4NTUxMn0.wKL88zlKwG4BEq9NNg5p2cRlhklZb7z5DipRLN8FzPFNmyPsYumd_nB1JnAHJxb-_wMhudizlhs0SAjSj6Jc0g
 
 ###  users 등록
 POST 192.168.219.103:8000/users
@@ -30,8 +32,10 @@ Content-Type: application/json
 ###  users 전체 조회
 GET 192.168.219.103:8000/user-service/users
 #GET 192.168.219.103:53163/users
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNGQ0YzMyMi1mZjkxLTRjZWQtODQ3Yi00YTIxZjg4ODg2MTciLCJlbWFpbCI6InpoeXVuQGFzZCIsImV4cCI6MTY5OTY4NTUxMn0.wKL88zlKwG4BEq9NNg5p2cRlhklZb7z5DipRLN8FzPFNmyPsYumd_nB1JnAHJxb-_wMhudizlhs0SAjSj6Jc0g
 
 ###  users 단건 조회
 GET 192.168.219.103:8000/user-service/users/22da7089-2939-46cc-b821-2e27339109ca
 #GET 192.168.219.103:53163/users/22da7089-2939-46cc-b821-2e27339109ca
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNGQ0YzMyMi1mZjkxLTRjZWQtODQ3Yi00YTIxZjg4ODg2MTciLCJlbWFpbCI6InpoeXVuQGFzZCIsImV4cCI6MTY5OTY4NTUxMn0.wKL88zlKwG4BEq9NNg5p2cRlhklZb7z5DipRLN8FzPFNmyPsYumd_nB1JnAHJxb-_wMhudizlhs0SAjSj6Jc0g
 
