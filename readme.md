@@ -26,6 +26,8 @@
 <br>
 
 ### config-service  ( config )
+> 설정 파일 git repository 🔗 [inflearn-e-commerce-msa-config](https://github.com/zhyunk/inflearn-e-commerce-msa-config)
+
 - port 
     - 8888 <br><br>  
 - dependency   
