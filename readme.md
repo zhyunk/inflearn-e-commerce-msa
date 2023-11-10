@@ -38,8 +38,11 @@
     - random  <br><br>  
 - dependency   
     - Eureka Discovery Client  
-    - Spring Web  
+    - Config Client
+    - Cloud Bootstrap
+    - Spring Boot Actuator
     - Spring Boot DevTools  
+    - Spring Web  
     - Lombok  
     - jpa 
     - h2 
@@ -55,8 +58,8 @@
     - random  <br><br>  
 - dependency   
     - Eureka Discovery Client  
-    - Spring Web  
     - Spring Boot DevTools  
+    - Spring Web  
     - Lombok  
     - jpa 
     - h2 
