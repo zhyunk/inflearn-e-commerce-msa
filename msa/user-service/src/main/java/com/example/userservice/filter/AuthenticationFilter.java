@@ -1,6 +1,7 @@
 package com.example.userservice.filter;
 
 import com.example.userservice.dto.UserDto;
+import com.example.userservice.jwt.JwtProvider;
 import com.example.userservice.service.UserService;
 import com.example.userservice.vo.RequestLogin;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final UserService userService;
-    private final Environment env;
+    private final JwtProvider jwtProvider;
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
@@ -50,5 +50,10 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                                             Authentication authResult) throws IOException, ServletException {
         String username = ((User) authResult.getPrincipal()).getUsername();
         UserDto userDetails = userService.getUserDetailsByEmail(username);
+        String token = jwtProvider.createToken(userDetails);
+
+        response.addHeader("token", token);
+        response.addHeader("userDetails", userDetails.getUserId());
     }
+
 }

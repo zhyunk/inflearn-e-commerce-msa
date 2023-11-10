@@ -1,11 +1,11 @@
 package com.example.userservice.config;
 
 import com.example.userservice.filter.AuthenticationFilter;
+import com.example.userservice.jwt.JwtProvider;
 import com.example.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.security.authorization.AuthorizationDecision;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -26,8 +26,8 @@ import static org.springframework.boot.autoconfigure.security.servlet.PathReques
 @Configuration
 public class SecurityConfig {
     private final AuthenticationConfiguration authenticationConfiguration;
+    private final JwtProvider jwtProvider;
     private final UserService userService;
-    private final Environment env;
 
     private final IpAddressMatcher ALLOWED_IP_ADDRESS = new IpAddressMatcher("192.168.219.103");
 
@@ -51,7 +51,7 @@ public class SecurityConfig {
     }
 
     private AuthenticationFilter authenticationFilter() throws Exception {
-        AuthenticationFilter filter = new AuthenticationFilter(userService, env);
+        AuthenticationFilter filter = new AuthenticationFilter(userService, jwtProvider);
         filter.setAuthenticationManager(authenticationConfiguration.getAuthenticationManager());
 
         return filter;
