@@ -1,7 +1,5 @@
 server:
   port: 0
-  servlet:
-    context-path: /user-service
 
 spring:
   application:

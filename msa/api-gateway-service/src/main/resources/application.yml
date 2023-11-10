@@ -8,10 +8,36 @@ spring:
   cloud:
     gateway:
       routes:
+#        - id: user-service
+#          uri: lb://user-service
+#          predicates:
+#            - Path=/user-service/**
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user-service/login
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}/
+
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user-service/users
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}/
+
         - id: user-service
           uri: lb://user-service
           predicates:
             - Path=/user-service/**
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}/
         - id: catalog-service
           uri: lb://catalog-service
           predicates:

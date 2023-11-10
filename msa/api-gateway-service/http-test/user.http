@@ -1,17 +1,28 @@
 ###  health check
-GET localhost:8000/user-service/health_check
+#GET 127.0.0.1:8000/user-service/health_check
+GET 127.0.0.1:65217/health_check
 
 ###  welcome 메세지 출력
 GET localhost:8000/user-service/welcome
 
 ###  users 등록
-POST localhost:8000/user-service/users
+#POST 127.0.0.1:8000/user-service/users
+POST 127.0.0.1:65217/users
 Content-Type: application/json
 
 {
-  "email": "zhyun@kim.wlgus",
+  "email": "zhyun@asd",
   "name": "얼거스 김",
   "pwd": "zhyun"
+}
+
+###  users 로그인
+POST 127.0.0.1:65217/login
+Content-Type: application/json
+
+{
+  "email": "zhyun@asd",
+  "password": "zhyun"
 }
 
 ###  users 전체 조회
