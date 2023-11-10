@@ -1,3 +1,17 @@
+###  actuator - refresh
+POST 192.168.219.103:8000/user-service/actuator/refresh
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNGQ0YzMyMi1mZjkxLTRjZWQtODQ3Yi00YTIxZjg4ODg2MTciLCJlbWFpbCI6InpoeXVuQGFzZCIsImV4cCI6MTY5OTY4NTUxMn0.wKL88zlKwG4BEq9NNg5p2cRlhklZb7z5DipRLN8FzPFNmyPsYumd_nB1JnAHJxb-_wMhudizlhs0SAjSj6Jc0g
+
+###  actuator - beans
+GET 192.168.219.103:8000/user-service/actuator/beans
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNGQ0YzMyMi1mZjkxLTRjZWQtODQ3Yi00YTIxZjg4ODg2MTciLCJlbWFpbCI6InpoeXVuQGFzZCIsImV4cCI6MTY5OTY4NTUxMn0.wKL88zlKwG4BEq9NNg5p2cRlhklZb7z5DipRLN8FzPFNmyPsYumd_nB1JnAHJxb-_wMhudizlhs0SAjSj6Jc0g
+
+###  actuator - health
+GET 192.168.219.103:8000/user-service/actuator/health
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNGQ0YzMyMi1mZjkxLTRjZWQtODQ3Yi00YTIxZjg4ODg2MTciLCJlbWFpbCI6InpoeXVuQGFzZCIsImV4cCI6MTY5OTY4NTUxMn0.wKL88zlKwG4BEq9NNg5p2cRlhklZb7z5DipRLN8FzPFNmyPsYumd_nB1JnAHJxb-_wMhudizlhs0SAjSj6Jc0g
+
+
 ###  health check
 GET 192.168.219.103:8000/user-service/health_check
 #GET 192.168.219.103:53163/health_check
