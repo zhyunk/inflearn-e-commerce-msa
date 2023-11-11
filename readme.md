@@ -1,7 +1,25 @@
 # inflearn-e-commerce-msa
 
+<br>
 
-## ✏️ 프로젝트 환경
+## 🔎️ 선행 실행 프로그램
+in windows Powershell
+- RabbitMQ Server
+  - 실행
+    ```bash
+    rabbitmq-server -detached 
+    ```
+  - 종료
+    ```bash
+    cd 'C:\Program Files\RabbitMQ Server\rabbitmq_server-3.12.8\sbin'
+    ```
+    ```bash
+    rabbitmqctl stop
+    ```
+
+<br>
+
+## ✏️ Spring Boot 프로젝트 환경
 - spring boot 3.1.5  
 - java 17  
 - jdk 19 <br><br>  
@@ -11,6 +29,7 @@
     - 8761  <br><br>  
 - dependency   
     - Eureka Server  
+    - Spring Boot Actuator
 
 <br>
 
@@ -20,6 +39,9 @@
 - dependency   
     - Eureka Discovery Client  
     - Gateway
+    - Cloud Bootstrap
+    - Spring Boot Actuator
+    - Spring Cloud Starter Bus Amqp <br><br>
     - Lombok
     - jjwt  
 
@@ -32,6 +54,9 @@
     - 8888 <br><br>  
 - dependency   
     - config server
+    - Cloud Bootstrap
+    - Spring Boot Actuator
+    - Spring Cloud Starter Bus Amqp
 
 <br>
 
@@ -43,7 +68,8 @@
     - Config Client
     - Cloud Bootstrap
     - Spring Boot Actuator
-    - Spring Boot DevTools  
+    - Spring Cloud Starter Bus Amqp
+    - Spring Boot DevTools   <br><br>
     - Spring Web  
     - Lombok  
     - jpa 
@@ -60,7 +86,10 @@
     - random  <br><br>  
 - dependency   
     - Eureka Discovery Client  
-    - Spring Boot DevTools  
+    - Cloud Bootstrap
+    - Spring Boot Actuator
+    - Spring Cloud Starter Bus Amqp
+    - Spring Boot DevTools   <br><br>
     - Spring Web  
     - Lombok  
     - jpa 
