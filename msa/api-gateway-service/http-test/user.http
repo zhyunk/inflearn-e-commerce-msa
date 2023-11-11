@@ -1,3 +1,7 @@
+###  actuator - busrefresh
+POST http://localhost:8000/actuator/busrefresh
+Content-Type: application/json
+
 ###  actuator - refresh
 POST 192.168.219.103:8000/user-service/actuator/refresh
 Content-Type: application/json
