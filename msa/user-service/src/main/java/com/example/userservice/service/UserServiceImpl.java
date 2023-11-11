@@ -8,15 +8,21 @@ import com.example.userservice.vo.ResponseUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.env.Environment;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import static org.springframework.http.HttpMethod.GET;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -25,6 +31,8 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper mapper;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final RestTemplate restTemplate;
+    private final Environment env;
 
     @Override
     public ResponseUser createUser(UserDto userDto) {
@@ -47,7 +55,11 @@ public class UserServiceImpl implements UserService {
 
         ResponseUser responseUser = mapper.map(user.get(), ResponseUser.class);
 
-        List<ResponseOrder> orders = new ArrayList<>();
+        String orderUrl = String.format(env.getProperty("order-service.url"), userId);
+        ResponseEntity<List<ResponseOrder>> response = restTemplate.exchange(orderUrl, GET, null,
+                new ParameterizedTypeReference<List<ResponseOrder>>() { });
+
+        List<ResponseOrder> orders = response.getBody();
         responseUser.setOrders(orders);
 
         return responseUser;
