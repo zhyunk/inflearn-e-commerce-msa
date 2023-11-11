@@ -1,14 +1,7 @@
 version = '0.0.1'
 
 ext {
-    set('springCloudVersion', "2022.0.4")
     set('modelMapperVersion', "3.2.0")
-}
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
 }
 
 dependencies {
@@ -30,10 +23,3 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
-}
-
