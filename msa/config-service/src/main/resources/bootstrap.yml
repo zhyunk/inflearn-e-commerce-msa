@@ -1,3 +1,10 @@
 encrypt:
-  key: qwemnbasdpoizxckjlasd.,mxcvblipou234-98sfdljkcvb/.,';l][p12-3-898793405rfhjled';l|liIdf
+  # 대칭키
+  # key: qwemnbasdpoizxckjlasd.,mxcvblipou234-98sfdljkcvb/.,';l][p12-3-898793405rfhjled';l|liIdf
+  # 비대칭 키
+  key-store:
+    location: file:///${user.home}\inflearn-spring-msa-config\keystore\apiEncryptionKey.jks
+    password: qwe987
+    alias: apiEncryptionKey
+
 
