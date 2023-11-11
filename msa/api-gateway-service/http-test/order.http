@@ -2,13 +2,13 @@
 GET http://localhost:8000/order-service/health_check
 
 ### 회원의 신규 주문 생성
-POST http://localhost:8000/order-service/f79fa1c1-78c4-45c2-9ae5-efe8b4f6bb36/orders
+POST http://localhost:8000/order-service/a2af3fe4-804d-491c-8d4c-50ca6583c1ef/orders
 Content-Type: application/json
 
 {
-  "productId": "CATALOG_001",
-  "qty" : 10,
-  "unitPrice": 1500
+  "productId": "CATALOG_002",
+  "qty" : 11,
+  "unitPrice": 1300
 }
 
 ### 회원의 주문 내역 조회
