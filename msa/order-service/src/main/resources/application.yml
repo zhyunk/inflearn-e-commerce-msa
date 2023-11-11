@@ -8,7 +8,6 @@ spring:
     name: order-service
   profiles:
     include:
-      - bootstrap
       - actuator
       - rabbitmq
 

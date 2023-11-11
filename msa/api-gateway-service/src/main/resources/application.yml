@@ -6,7 +6,6 @@ spring:
     name: api-gateway-service
   profiles:
     include:
-      - bootstrap
       - actuator-gateway
       - rabbitmq
 
@@ -64,6 +63,7 @@ spring:
             - Path=/order-service/**
           filters:
             - AuthorizationHeaderFilter
+
 
 
 eureka:

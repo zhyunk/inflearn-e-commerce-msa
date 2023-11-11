@@ -6,7 +6,6 @@ spring:
     name: user-service
   profiles:
     include:
-      - bootstrap
       - actuator
       - rabbitmq
 
