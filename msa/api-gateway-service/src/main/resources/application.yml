@@ -54,15 +54,15 @@ spring:
           uri: lb://catalog-service
           predicates:
             - Path=/catalog-service/**
-          filters:
-            - AuthorizationHeaderFilter
+#          filters:
+#            - AuthorizationHeaderFilter
 
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order-service/**
-          filters:
-            - AuthorizationHeaderFilter
+#          filters:
+#            - AuthorizationHeaderFilter
 
 
 

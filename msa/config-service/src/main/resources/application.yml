@@ -6,7 +6,7 @@ spring:
   application:
     name: config-service
   profiles:
-    active: native
+#    active: native
     include:
       - rabbitmq
       - actuator-config
