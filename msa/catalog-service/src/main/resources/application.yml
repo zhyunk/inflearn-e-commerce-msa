@@ -10,6 +10,7 @@ spring:
     include:
       - bootstrap
       - actuator
+      - rabbitmq
 
   datasource:
     url: jdbc:h2:${user.dir}/catalog-service/h2/testdb;AUTO_SERVER=TRUE;mode=MYSQL;

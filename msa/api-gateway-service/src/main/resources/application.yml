@@ -8,6 +8,7 @@ spring:
     include:
       - bootstrap
       - actuator-gateway
+      - rabbitmq
 
   cloud:
     gateway:
