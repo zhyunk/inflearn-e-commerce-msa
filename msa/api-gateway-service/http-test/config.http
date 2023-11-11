@@ -1,0 +1,12 @@
+### encrypt
+POST http://127.0.0.1:8888/encrypt
+Content-Type: text/plain
+
+12321
+
+### decrypt
+POST http://127.0.0.1:8888/decrypt
+Content-Type: text/plain
+
+206a84ddced26e6175391e67260d88a6083b140ff19d4edab1a03330faebab9a
+
