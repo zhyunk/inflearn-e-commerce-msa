@@ -17,6 +17,36 @@ in windows Powershell
     rabbitmqctl stop
     ```
 
+
+- Zookeeper
+  - 실행
+    ```bash
+    cd 'C:\kafka\kafka_2.13-3.6.0'
+    ```
+    ```bash
+    .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+    ```
+
+
+- Kafka Server
+  - 실행
+    ```bash
+    cd 'C:\kafka\kafka_2.13-3.6.0'
+    ```
+    ```bash
+    .\bin\windows\kafka-server-start.bat .\config\server.properties
+    ```
+
+
+- Kafka Connector
+  - 실행
+    ```bash
+    cd 'c:\kafka\confluent-7.5.2'
+    ```
+    ```bash
+    .\bin\windows\connect-distributed.bat .\etc\kafka\connect-distributed.properties
+    ```
+
 <br>
 
 ## ✏️ Spring Boot 프로젝트 환경
@@ -82,7 +112,7 @@ in windows Powershell
 
 <br>
 
-### catalog-service , order-service 
+### catalog-service 
 - port 
     - random  <br><br>  
 - dependency   
@@ -95,6 +125,25 @@ in windows Powershell
     - Lombok  
     - jpa 
     - h2 
+    - validation
+    - model mapper 
+    
+<br>
+
+### order-service 
+- port 
+    - random  <br><br>  
+- dependency   
+    - Eureka Discovery Client  
+    - Cloud Bootstrap
+    - Spring Boot Actuator
+    - Spring Cloud Starter Bus Amqp
+    - Spring Boot DevTools   <br><br>
+    - Spring Web  
+    - Lombok  
+    - jpa 
+    - h2 
+    - mariadb
     - validation
     - model mapper 
 
