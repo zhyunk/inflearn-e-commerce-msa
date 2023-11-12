@@ -6,6 +6,7 @@ import com.example.userservice.entity.User;
 import com.example.userservice.repository.UserRepository;
 import com.example.userservice.vo.ResponseOrder;
 import com.example.userservice.vo.ResponseUser;
+import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -56,8 +57,12 @@ public class UserServiceImpl implements UserService {
 
         ResponseUser responseUser = mapper.map(user.get(), ResponseUser.class);
 
-        List<ResponseOrder> orders = orderServiceClient.getOrders(userId);
-        responseUser.setOrders(orders);
+        try {
+            List<ResponseOrder> orders = orderServiceClient.getOrders(userId);
+            responseUser.setOrders(orders);
+        } catch (FeignException e) {
+            log.error(e.getMessage());
+        }
 
         return responseUser;
     }
