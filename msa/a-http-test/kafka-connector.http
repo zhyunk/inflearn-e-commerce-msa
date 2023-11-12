@@ -1,0 +1,27 @@
+### Connector 삭제
+DELETE 127.0.0.1:8083/connectors/my-source-connect
+
+### Connector 등록
+POST 127.0.0.1:8083/connectors
+Content-Type: application/json
+
+{
+   "name" : "my-source-connect",
+   "config" : {
+      "connector.class" : "io.confluent.connect.jdbc.JdbcSourceConnector",
+      "connection.url":"jdbc:mariadb://localhost:3307/mydb",
+      "connection.user":"zhyun",
+      "connection.password":"",
+      "mode": "incrementing",
+      "incrementing.column.name" : "id",
+      "table.whitelist":"mydb.users",
+      "topic.prefix" : "my_topic_",
+      "tasks.max" : "1"
+   }
+}
+
+### Connector 조회
+GET 127.0.0.1:8083/connectors
+
+### Connector [ my-source-connect ] 상세 조회
+GET 127.0.0.1:8083/connectors/my-source-connect/status
