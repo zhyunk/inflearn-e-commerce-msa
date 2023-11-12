@@ -1,5 +1,6 @@
 package com.example.userservice.service;
 
+import com.example.userservice.client.OrderServiceClient;
 import com.example.userservice.dto.UserDto;
 import com.example.userservice.entity.User;
 import com.example.userservice.repository.UserRepository;
@@ -31,7 +32,7 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper mapper;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final RestTemplate restTemplate;
+    private final OrderServiceClient orderServiceClient;
     private final Environment env;
 
     @Override
@@ -55,11 +56,7 @@ public class UserServiceImpl implements UserService {
 
         ResponseUser responseUser = mapper.map(user.get(), ResponseUser.class);
 
-        String orderUrl = String.format(env.getProperty("order-service.url"), userId);
-        ResponseEntity<List<ResponseOrder>> response = restTemplate.exchange(orderUrl, GET, null,
-                new ParameterizedTypeReference<List<ResponseOrder>>() { });
-
-        List<ResponseOrder> orders = response.getBody();
+        List<ResponseOrder> orders = orderServiceClient.getOrders(userId);
         responseUser.setOrders(orders);
 
         return responseUser;
