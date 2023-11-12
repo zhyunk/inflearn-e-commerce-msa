@@ -71,6 +71,7 @@ in windows Powershell
     - Spring Cloud Starter Bus Amqp
     - Spring Boot DevTools   <br><br>
     - Spring Web  
+    - OpenFeign
     - Lombok  
     - jpa 
     - h2 
