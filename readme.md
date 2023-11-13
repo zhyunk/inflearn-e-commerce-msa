@@ -5,14 +5,15 @@
 ## 🔎️ 선행 실행 프로그램
 in windows Powershell
 - RabbitMQ Server
+  - bin 위치
+    ```bash
+    cd 'C:\Program Files\RabbitMQ Server\rabbitmq_server-3.12.8\sbin'
+    ```
   - 실행
     ```bash
     rabbitmq-server -detached 
     ```
   - 종료
-    ```bash
-    cd 'C:\Program Files\RabbitMQ Server\rabbitmq_server-3.12.8\sbin'
-    ```
     ```bash
     rabbitmqctl stop
     ```
@@ -21,30 +22,30 @@ in windows Powershell
 - Zookeeper
   - 실행
     ```bash
-    cd 'C:\kafka\kafka_2.13-3.6.0'
+    cd 'C:\kafka'
     ```
     ```bash
-    .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+    .\kafka_2.13-3.6.0\bin\windows\zookeeper-server-start.bat .\kafka_2.13-3.6.0\config\zookeeper.properties
     ```
 
 
 - Kafka Server
   - 실행
     ```bash
-    cd 'C:\kafka\kafka_2.13-3.6.0'
+    cd 'C:\kafka'
     ```
     ```bash
-    .\bin\windows\kafka-server-start.bat .\config\server.properties
+    .\kafka_2.13-3.6.0\bin\windows\kafka-server-start.bat .\kafka_2.13-3.6.0\config\server.properties
     ```
 
 
 - Kafka Connector
   - 실행
     ```bash
-    cd 'c:\kafka\confluent-7.5.2'
+    cd 'c:\kafka'
     ```
     ```bash
-    .\bin\windows\connect-distributed.bat .\etc\kafka\connect-distributed.properties
+    .\confluent-7.5.2\bin\windows\connect-distributed.bat .\confluent-7.5.2\etc\kafka\connect-distributed.properties
     ```
 
 <br>
@@ -121,6 +122,7 @@ in windows Powershell
     - Spring Boot Actuator
     - Spring Cloud Starter Bus Amqp
     - Spring Boot DevTools   <br><br>
+    - Spring for Apache Kafka
     - Spring Web  
     - Lombok  
     - jpa 
@@ -139,6 +141,7 @@ in windows Powershell
     - Spring Boot Actuator
     - Spring Cloud Starter Bus Amqp
     - Spring Boot DevTools   <br><br>
+    - Spring for Apache Kafka
     - Spring Web  
     - Lombok  
     - jpa 
