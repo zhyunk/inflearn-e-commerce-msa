@@ -5,4 +5,4 @@ GET http://localhost:8000/catalog-service/health_check
 GET http://localhost:8000/catalog-service/catalog
 
 ### catalog 단건 조회
-GET http://localhost:8000/catalog-service/catalog/CATALOG-001
+GET http://localhost:8000/catalog-service/catalog/CATALOG-003
