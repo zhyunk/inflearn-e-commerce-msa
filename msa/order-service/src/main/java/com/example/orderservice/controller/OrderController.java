@@ -1,6 +1,7 @@
 package com.example.orderservice.controller;
 
 import com.example.orderservice.dto.OrderDto;
+import com.example.orderservice.messagequeue.KafkaProducer;
 import com.example.orderservice.service.OrderService;
 import com.example.orderservice.vo.RequestOrder;
 import com.example.orderservice.vo.ResponseOrder;
@@ -19,6 +20,7 @@ public class OrderController {
     private final Environment env;
     private final ModelMapper mapper;
     private final OrderService orderService;
+    private final KafkaProducer kafkaProducer;
 
     @GetMapping("/health_check")
     public String status() {
@@ -33,6 +35,9 @@ public class OrderController {
 
         ResponseOrder responseOrder = orderService.createOrder(dto);
 
+        // send this order to the kafka
+        kafkaProducer.send("example-catalog-topic", dto);
+
         return ResponseEntity
                 .created(ServletUriComponentsBuilder
                         .fromCurrentRequest().build().toUri())
@@ -45,4 +50,5 @@ public class OrderController {
         return ResponseEntity
                 .ok(orderService.getOrdersByUserId(userId));
     }
+
 }
