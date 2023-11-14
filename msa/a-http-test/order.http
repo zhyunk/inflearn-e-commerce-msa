@@ -6,8 +6,8 @@ POST http://localhost:8000/order-service/a2af3fe4-804d-491c-8d4c-50ca6583c1ef/or
 Content-Type: application/json
 
 {
-  "productId": "CATALOG-003",
-  "qty" : 15,
+  "productId": "CATALOG-001",
+  "qty" : 11,
   "unitPrice": 2500
 }
 
