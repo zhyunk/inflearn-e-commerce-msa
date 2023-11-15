@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -15,7 +16,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @ToString
 @Getter @Setter
 @EntityListeners(AuditingEntityListener.class)
-@Entity(name = "`order`")
+@Entity(name = "orders")
 public class Order {
     @Id @GeneratedValue(strategy = IDENTITY)
     private Long id;
@@ -35,11 +36,13 @@ public class Order {
     private String orderId;
 
     @Column(nullable = false, updatable = false)
+    @ColumnDefault("CURRENT_TIMESTAMP")
     @CreatedDate
     private LocalDateTime createdAt;
 
     @Column(nullable = false)
     @LastModifiedDate
+    @ColumnDefault("CURRENT_TIMESTAMP")
     private LocalDateTime updatedAt;
 
 }
