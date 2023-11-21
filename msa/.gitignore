@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/git,intellij+all,windows,macos,linux,java,gradle,maven
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,intellij+all,windows,macos,linux,java,gradle,maven
 
+*.jks
+
 ### h2 ###
 **/h2/**
 
